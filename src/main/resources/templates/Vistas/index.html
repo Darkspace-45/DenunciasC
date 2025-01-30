@@ -2,18 +2,20 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Acción Ciudadana</title>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
 </head>
-<body>
-<nav class="bg-blue-500 border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+<body class="bg-gray-100">
+
+<nav class="bg-blue-600 border-b border-gray-200">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo"/>
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Accion Ciudadana</span>
+            <span class="self-center text-2xl font-bold text-white">Acción Ciudadana</span>
         </a>
         <button data-collapse-toggle="navbar-dropdown" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-blue-700 focus:outline-none"
                 aria-controls="navbar-dropdown" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -22,15 +24,15 @@
             </svg>
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-            <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-white md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
                 <li>
                     <a href="#"
-                       class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
+                       class="block py-2 px-3 text-blue-600 bg-blue-100 rounded-md md:bg-transparent md:text-blue-600 md:p-0"
                        aria-current="page">Home</a>
                 </li>
                 <li>
                     <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
-                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0">
                         Dropdown
                         <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                              fill="none" viewBox="0 0 10 6">
@@ -38,255 +40,174 @@
                                   d="m1 1 4 4 4-4"/>
                         </svg>
                     </button>
-                    <!-- Dropdown menu -->
                     <div id="dropdownNavbar"
-                         class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                         class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-md w-44">
+                        <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
                             <li>
                                 <a href="#"
-                                   class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                                   class="block px-4 py-2 hover:bg-gray-100">Dashboard</a>
                             </li>
                             <li>
                                 <a href="#"
-                                   class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                   class="block px-4 py-2 hover:bg-gray-100">Settings</a>
                             </li>
                             <li>
                                 <a href="#"
-                                   class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                                   class="block px-4 py-2 hover:bg-gray- 100">Earnings</a>
                             </li>
                         </ul>
                         <div class="py-1">
                             <a href="#"
-                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign
-                                out</a>
+                               class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Sign out</a>
                         </div>
                     </div>
                 </li>
                 <li>
                     <a href="#"
-                       class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Nosotros</a>
+                       class="block py-2 px-3 text-gray-900 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0">Nosotros</a>
                 </li>
-
             </ul>
         </div>
     </div>
 </nav>
 
-
-<!-- Sección de bienvenida con imagen grande -->
 <section id="home" class="text-center py-16 bg-white">
-    <img th:src="@{resources/static/imagenes/imagen.denuncias.jpeg}" alt="Accion ciudadana"
-         class="w-full h-96 object-cover">
-    <h1 class="text-4xl font-bold text-blue-600 mt-8">¡Bienvenidos Accion Ciudadana!</h1>
-    <br>
-
-
+    <img th:src="@{resources/static/imagenes/imagen.denuncias.jpeg}" alt="Acción Ciudadana"
+         class="w-full h-96 object-cover rounded-lg shadow-lg">
+    <h1 class="text-4xl font-bold text-blue-600 mt-8">¡Bienvenidos a Acción Ciudadana!</h1>
     <p class="text-lg text-gray-600 mt-4">Tu denuncia, nuestro compromiso. Acción Ciudadana.</p>
 </section>
-<br>
 
-<br>
-
-<!-- Sección de Productos -->
 <section id="products" class="py-16 bg-gray-50 px-4">
     <div class="max-w-screen-lg mx-auto text-center">
-
-        <h2 class="text-3xl font-semibold text-blue-600 mb-8">Denuncias recientes</h2>
+        <h2 class="text-3xl font-semibold text-blue-600 mb-8">Denuncias Recientes</h2>
         <div class="grid md:grid-cols-3 gap-12">
-            <!-- Perfumes para Hombres -->
             <div class="bg-indigo-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
                 <img th:src="@{imagenes/img1.jpg}" alt="denuncia 1" class="w-full h-56 object-cover rounded-lg">
-                <h3 class="text-2xl font-semibold text-indigo-600 mt-4">Problema en la vía pública</h3>
-                <p class="text-gray-600 mt-4">Los ciudadanos reportaron baches en la avenida principal que representan
-                    un riesgo para la seguridad de los conductores y peatones</p>
+                <h3 class="text-2xl font-semibold text-indigo-600 mt-4">Problema en la Vía Pública</h3>
+                <p class="text-gray-600 mt-4">Los ciudadanos reportaron baches en la avenida principal que representan un riesgo para la seguridad de los conductores y peatones.</p>
             </div>
-
-            <!-- Perfumes para Mujeres -->
             <div class="bg-pink-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="https://via.placeholder.com/350x350?text=Perfume+Mujer" alt="denuncia 2"
-                     class="w-full h-56 object-cover rounded-lg">
-                <h3 class="text-2xl font-semibold text-pink-600 mt-4">Basura acumulada en parque</h3>
-                <p class="text-gray-600 mt-4">En el parque central, la falta de mantenimiento está llevando a la
-                    acumulación de basura, afectando el ambiente y la salud de los vecinos.</p>
+                <img src="https://via.placeholder.com/350x350?text=Denuncia+2" alt="denuncia 2" class="w-full h-56 object-cover rounded-lg">
+                <h3 class="text-2xl font-semibold text-pink-600 mt-4">Basura Acumulada en Parque</h3>
+                <p class="text-gray-600 mt-4">En el parque central, la falta de mantenimiento está llevando a la acumulación de basura, afectando el ambiente y la salud de los vecinos.</p>
             </div>
-
-            <!-- Otros Perfumes -->
             <div class="bg-green-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="https://via.placeholder.com/350x350?text=Perfume+Unisex" alt="denuncia 3"
-                     class="w-full h-56 object-cover rounded-lg">
-                <h3 class="text-2xl font-semibold text--600 mt-4">Falta de seguridad</h3>
-                <p class="text-gray-600 mt-4">Los comerciantes han reportado varios incidentes de robo y vandalismo en
-                    la zona, pidiendo mayor presencia policial.</p>
+                <img src="https://via.placeholder.com/350x350?text=Denuncia+3" alt="denuncia 3" class="w-full h-56 object-cover rounded-lg">
+                <h3 class="text-2xl font-semibold text-green-600 mt-4">Falta de Seguridad</h3>
+                <p class="text-gray-600 mt-4">Los comerciantes han reportado varios incidentes de robo y vandalismo en la zona, pidiendo mayor presencia policial.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Separador -->
-<br>
-<br>
-<br>
-
-<!-- Sección de Visión y Misión -->
 <section id="vision" class="py-16 bg-gray-50 px-4">
     <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12">
-        <!-- Visión -->
         <div class="bg-blue-100 p-6 rounded-lg shadow-lg">
             <h2 class="text-3xl font-semibold text-blue-600 text-center">Nuestra Visión</h2>
-            <p class="text-lg text-gray-600 mt-4">Ser la plataforma líder en empoderamiento ciudadano, donde cada voz se
-                escuche y cada denuncia sea un paso hacia comunidades más seguras, transparentes y justas.</p>
+            <p class="text-lg text-gray-600 mt-4">Ser la plataforma líder en empoderamiento ciudadano, donde cada voz se escuche y cada denuncia sea un paso hacia comunidades más seguras, transparentes y justas.</p>
         </div>
-
-        <!-- Misión -->
         <div class="bg-teal-100 p-6 rounded-lg shadow-lg">
             <h2 class="text-3xl font-semibold text-teal-600 text-center">Nuestra Misión</h2>
-            <p class="text-lg text-gray-600 mt-4">Brindar a los ciudadanos una herramienta segura, accesible y eficiente
-                para denunciar problemas y situaciones que afectan a su comunidad, fomentando la participación activa en
-                la construcción de un entorno más justo y responsable.</p>
+            <p class="text-lg text-gray-600 mt-4">Brindar a los ciudadanos una herramienta segura, accesible y eficiente para denunciar problemas y situaciones que afectan a su comunidad, fomentando la participación activa en la construcción de un entorno más justo y responsable.</p>
         </div>
     </div>
 </section>
-<br>
-<br>
-<br>
-<section id="participacion" class="py-16 bg-gray-50 px-4">
+
+<section id="participacion" class="py- 16 bg-gray-50 px-4">
     <div class="max-w-screen-lg mx-auto grid md:grid-cols-2 gap-12">
-        <!-- Cómo Denunciar -->
         <div class="bg-blue-100 p-6 rounded-lg shadow-lg">
             <h2 class="text-3xl font-semibold text-blue-600 text-center">¿Cómo Denunciar?</h2>
-            <p class="text-lg text-gray-600 mt-4">Es fácil. Solo ingresa los detalles de tu denuncia, adjunta imágenes
-                si es posible, y nuestra plataforma se encargará de procesarla y redirigirla a las autoridades
-                correspondientes.</p>
+            <p class="text-lg text-gray-600 mt-4">Es fácil. Solo ingresa los detalles de tu denuncia, adjunta imágenes si es posible, y nuestra plataforma se encargará de procesarla y redirigirla a las autoridades correspondientes.</p>
         </div>
-
-        <!-- Beneficios de Denunciar -->
         <div class="bg-teal-100 p-6 rounded-lg shadow-lg">
             <h2 class="text-3xl font-semibold text-teal-600 text-center">¿Por qué Denunciar?</h2>
-            <p class="text-lg text-gray-600 mt-4">Tu denuncia puede ser la diferencia para mejorar tu comunidad. Ayuda a
-                prevenir problemas y fomenta la transparencia y el bienestar colectivo.</p>
+            <p class="text-lg text-gray-600 mt-4">Tu denuncia puede ser la diferencia para mejorar tu comunidad. Ayuda a prevenir problemas y fomenta la transparencia y el bienestar colectivo.</p>
         </div>
     </div>
 </section>
-<!-- Separador -->
-<br>
-<br>
-<br>
-<!-- Sección de Servicios -->
 
 <section id="servicios" class="py-16 bg-white px-4">
     <div class="max-w-screen-lg mx-auto text-center">
         <h2 class="text-3xl font-semibold text-blue-600 mb-8">Nuestros Servicios</h2>
         <div class="mt-8 grid md:grid-cols-3 gap-12">
-            <!-- Servicio 1: Anonimato -->
             <div class="bg-blue-100 p-6 rounded-lg shadow-lg hover:bg-blue-200 transition duration-300">
                 <div class="mb-4 text-blue-600">
-                    <!-- Icono de Anonimato -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                         class="w-12 h-12 mx-auto">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M16 11V4a3 3 0 00-6 0v7m0 0a3 3 0 006 0V4m0 7a3 3 0 00-6 0V11z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V4a3 3 0 00-6 0v7m0 0a3 3 0 006 0V4m0 7a3 3 0 00-6 0V11z"/>
                     </svg>
                 </div>
                 <h3 class="text-2xl font-semibold">Denuncias Anónimas</h3>
-                <p class="text-gray-600 mt-4">Puedes realizar denuncias de forma completamente anónima. Tu seguridad es
-                    nuestra prioridad.</p>
+                <p class="text-gray-600 mt-4">Puedes realizar denuncias de forma completamente anónima. Tu seguridad es nuestra prioridad.</p>
             </div>
-
-            <!-- Servicio 2: Redirección a Autoridades -->
             <div class="bg-blue-100 p-6 rounded-lg shadow-lg hover:bg-blue-200 transition duration-300">
                 <div class="mb-4 text-blue-600">
-                    <!-- Icono de Redirección -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                         class="w-12 h-12 mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l9 9l9-9"/>
                     </svg>
                 </div>
                 <h3 class="text-2xl font-semibold">Redirección a Autoridades</h3>
-                <p class="text-gray-600 mt-4">Una vez procesada tu denuncia, la redirigiremos a las autoridades
-                    correspondientes para que se tomen las medidas necesarias.</p>
+                <p class="text-gray-600 mt-4">Una vez procesada tu denuncia, la redirigiremos a las autoridades correspondientes para que se tomen las medidas necesarias.</p>
             </div>
-
-            <!-- Servicio 3: Actualización de Estado -->
             <div class="bg-blue-100 p-6 rounded-lg shadow-lg hover:bg-blue-200 transition duration-300">
                 <div class="mb-4 text-blue-600">
-                    <!-- Icono de Estado -->
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                         class="w-12 h-12 mx-auto">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16M12 4v16"/>
                     </svg>
                 </div>
                 <h3 class="text-2xl font-semibold">Seguimiento de Denuncia</h3>
-                <p class="text-gray-600 mt-4">Podrás seguir el estado de tu denuncia y recibir actualizaciones en tiempo
-                    real sobre el progreso de la misma.</p>
+                <p class="text-gray-600 mt-4">Podrás seguir el estado de tu denuncia y recibir actualizaciones en tiempo real sobre el progreso de la misma.</p>
             </div>
         </div>
     </div>
 </section>
-<!-- Separador -->
-<br>
-<br>
-<br>
-<!-- Sección de Reseñas -->
+
 <section id="reviews" class="py-16 bg-gray-50 px-4">
     <div class="max-w-screen-lg mx-auto text-center">
         <h2 class="text-3xl font-semibold text-blue-600 mb-8">Lo que dicen nuestros clientes</h2>
         <div class="mt-8 space-y-6">
-            <!-- Reseña 1 -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <p class="text-lg text-gray-600">"Una plataforma increíblemente útil. He podido denunciar varios
-                    problemas en mi comunidad, desde basura en la vía pública hasta inseguridad, y todo se ha gestionado
-                    rápidamente. ¡Es genial saber que mi voz cuenta!"</p>
+                <p class="text-lg text-gray-600">"Una plataforma increíblemente útil. He podido denunciar varios problemas en mi comunidad, desde basura en la vía pública hasta inseguridad, y todo se ha gestionado rápidamente. ¡Es genial saber que mi voz cuenta!"</p>
                 <p class="mt-2 font-bold text-blue-600">Carolina Pérez</p>
             </div>
-            <!-- Reseña 2 -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <p class="text-lg text-gray-600">"Acción Ciudadana me permitió hacer una denuncia anónima sobre un
-                    problema de corrupción local. Me dio la tranquilidad de que mi identidad estaba protegida mientras
-                    se tomaban medidas."</p>
+                <p class="text-lg text-gray-600">"Acción Ciudadana me permitió hacer una denuncia anónima sobre un problema de corrupción local. Me dio la tranquilidad de que mi identidad estaba protegida mientras se tomaban medidas."</p>
                 <p class="mt-2 font-bold text-blue-600">José Luis Martínez</p>
             </div>
-            <!-- Reseña 3 -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <p class="text-lg text-gray-600">"Estoy impresionado con lo fácil que es reportar un problema en mi
-                    barrio. La plataforma es intuitiva y me mantiene actualizado sobre el estado de mis denuncias."</p>
+                <p class="text-lg text-gray-600">"Estoy impresionado con lo fácil que es reportar un problema en mi barrio. La plataforma es intuitiva y me mantiene actualizado sobre el estado de mis denuncias."</p>
                 <p class="mt-2 font-bold text-blue-600">Laura González</p>
             </div>
-            <!-- Reseña 4 -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <p class="text-lg text-gray-600">"Excelente herramienta para involucrarse en la mejora de la
-                    ciudad."</p>
+                <p class="text-lg text-gray-600">"Excelente herramienta para involucrarse en la mejora de la ciudad."</p>
                 <p class="mt-2 font-bold text-blue-600">Carlos Ramírez</p>
             </div>
-            <!-- Reseña 5 -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
-                <p class="text-lg text-gray-600">"Me encanta cómo esta plataforma no solo permite hacer denuncias, sino
-                    también seguir el progreso."</p>
+                <p class="text-lg text-gray-600">"Me encanta cómo esta plataforma no solo permite hacer denuncias, sino también seguir el progreso."</p>
                 <p class="mt-2 font-bold text-blue-600">Sofía López</p>
             </div>
         </div>
     </div>
 </section>
 
-<br>
-<br>
-<br>
-
-<!-- Footer -->
 <footer class="bg-blue-600 text-white py-6 text-center">
-    <p>&copy; 2025 Perfumería Seductio. Todos los derechos reservados.</p>
-    <div class="mt-4">
-        <a href="https://www.instagram.com" class="text-white hover:text-blue-200 mx-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                 class="w-6 h-6 inline">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 2c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm0 10c0 5.52 4.48 10 10 10H2c0-5.52 4.48-10 10-10z"/>
+    <p>&copy; 2025 Acción Ciudadana. Todos los derechos reservados.</p>
+    <div class="mt-4 flex justify-center">
+        <a href="https://www.instagram.com" class="text-white hover:text-blue-200 mx-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                <path fill="#fff" d="M128 23.064c34.177 0 38.225.13 51.722.745 12.48.57 19.258 2.655 23.769 4.408 5.974 2.322 10.238 5.096 14.717 9.575 4.48 4.479 7.253 8.743 9.575 14.717 1.753 4.511 3.838 11.289 4.408 23.768.615 13.498.745 17.546.745 51.723 0 34.178-.13 38.226-.745 51.723-.57 12.48-2.655 19.257-4.408 23.768-2.322 5.974-5.096 10.239-9.575 14.718-4.479 4.479-8.743 7.253-14.717 9.574-4.511 1.753-11.289 3.839-23.769 4.408-13.495.616-17.543.746-51.722.746-34.18 0-38.228-.13-51.723-.746-12.48-.57-19.257-2.655-23.768-4.408-5.974-2.321-10.239-5.095-14.718-9.574-4.479-4.48-7.253-8.744-9.574-14.718-1.753-4.51-3.839-11.288-4.408-23.768-.616-13.497-.746-17.545-.746-51.723 0-34.177.13-38.225.746-51.722.57-12.48 2.655-19.258 4.408-23.769 2.321-5.974 5.095-10.238 9.574-14.717 4.48-4.48 8.744-7.253 14.718-9.575 4.51-1.753 11.288-3.838 23.768-4.408 13.497-.615 17.545-.745 51.723-.745M128 0C93.237 0 88.878.147 75.226.77c-13.625.622-22.93 2.786-31.071 5.95-8.418 3.271-15.556 7.648-22.672 14.764C14.367 28.6 9.991 35.738 6.72 44.155 3.555 52.297 1.392 61.602.77 75.226.147 88.878 0 93.237 0 128c0 34.763.147 39.122.77 52.774.622 13.625 2.785 22.93 5.95 31.071 3.27 8.417 7.647 15.556 14.763 22.672 7.116 7.116 14.254 11.492 22.672 14.763 8.142 3.165 17.446 5.328 31.07 5.95 13.653.623 18.012.77 52.775.77s39.122-.147 52.774-.77c13.624-.622 22.929-2.785 31.07-5.95 8.418-3.27 15.556-7.647 22.672-14.763 7.116-7.116 11.492-14.254 14.763-22.672 3.165-8.142 5.328-17.446 5.95-31.07.623-13.653.77-18.012.77-52.775s-.147-39.122-.77-52.774c-.622-13.624-2.786-22.929-5.95-31.07-3.271-8.418-7.648-15.556-14.764-22.672C227.4 14.368 220.262 9.99 211.845 6.72c-8.142-3.164-17.447-5.328-31.071-5.95C167.122.147 162.763 0 128 0Zm0 62.27C91.698 62.27 62.27 91.7 62.27 128c0 36.302 29.428 65.73 65.73 65.73 36.301 0 65.73-29.428 65.73-65.73 0-36.301-29.429-65.73-65.73-65.73Zm0 108.397c-23.564 0-42.667-19.103-42.667-42.667S104.436 85.333 128 85.333s42.667 19.103 42.667 42.667-19.103 42.667-42.667 42.667Zm83.686-110.994c0 8.484-6.876 15.36-15.36 15.36-8.483 0-15.36-6.876-15.36-15.36 0-8.483 6.877-15.36 15.36-15.36 8.484 0 15.36 6.877 15.36 15.36Z"/>
             </svg>
         </a>
-        <a href="https://www.facebook.com" class="text-white hover:text-blue-200 mx-4">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                 class="w-6 h-6 inline">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10-4.48-10-10-10z"/>
+        <a href="https://www.facebook.com" class="text-white hover:text-blue-200 mx-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="url(#a)" height="32" width="32">
+                <defs>
+                    <linearGradient x1="50%" x2="50%" y1="97.078%" y2="0%" id="a">
+                        <stop offset="0%" stop-color="#0062E0"/>
+                        <stop offset="100%" stop-color="#19AFFF"/>
+                    </linearGradient>
+                </defs>
+                <path d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"/>
+                <path fill="#FFF" d="m25 23 .8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"/>
             </svg>
         </a>
     </div>

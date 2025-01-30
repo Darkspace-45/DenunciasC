@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class DenuncianteControlador {
 
     @GetMapping("/Inicio")
-    public String paginaInicio(){
+    public String paginaInicio() {
         return "/Vistas/index";
     }
 
