@@ -15,4 +15,9 @@ public class DenuncianteControlador {
     public String mostrarFormulario(){
         return "/Vistas/formulario";
     }
+
+    @GetMapping("/Nosotros")
+    public String paginaNosotros(){
+        return "/Vistas/Nosotros";
+    }
 }

@@ -5,13 +5,14 @@
     <title>Acción Ciudadana</title>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body class="bg-gray-100">
 
 <nav class="bg-blue-600 border-b border-gray-200">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo"/>
+            <img th:src="@{Img/logo.accion-ciudadana.jpeg}" class="h-8" alt="Flowbite Logo"/>
             <span class="self-center text-2xl font-bold text-white">Acción Ciudadana</span>
         </a>
         <button data-collapse-toggle="navbar-dropdown" type="button"
@@ -72,7 +73,7 @@
 </nav>
 
 <section id="home" class="text-center py-16 bg-white">
-    <img th:src="@{resources/static/imagenes/imagen.denuncias.jpeg}" alt="Acción Ciudadana"
+    <img th:src="@{Img/imagen-denuncias.jpeg}" alt="Acción Ciudadana"
          class="w-full h-96 object-cover rounded-lg shadow-lg">
     <h1 class="text-4xl font-bold text-blue-600 mt-8">¡Bienvenidos a Acción Ciudadana!</h1>
     <p class="text-lg text-gray-600 mt-4">Tu denuncia, nuestro compromiso. Acción Ciudadana.</p>
@@ -83,17 +84,17 @@
         <h2 class="text-3xl font-semibold text-blue-600 mb-8">Denuncias Recientes</h2>
         <div class="grid md:grid-cols-3 gap-12">
             <div class="bg-indigo-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img th:src="@{imagenes/img1.jpg}" alt="denuncia 1" class="w-full h-56 object-cover rounded-lg">
+                <img th:src="@{Img/baches.jpeg}" alt="denuncia 1" class="w-full h-56 object-cover rounded-lg">
                 <h3 class="text-2xl font-semibold text-indigo-600 mt-4">Problema en la Vía Pública</h3>
                 <p class="text-gray-600 mt-4">Los ciudadanos reportaron baches en la avenida principal que representan un riesgo para la seguridad de los conductores y peatones.</p>
             </div>
             <div class="bg-pink-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="https://via.placeholder.com/350x350?text=Denuncia+2" alt="denuncia 2" class="w-full h-56 object-cover rounded-lg">
+                <img th:src="@{Img/denuncia2.jpeg}" alt="denuncia 2" class="w-full h-56 object-cover rounded-lg">
                 <h3 class="text-2xl font-semibold text-pink-600 mt-4">Basura Acumulada en Parque</h3>
                 <p class="text-gray-600 mt-4">En el parque central, la falta de mantenimiento está llevando a la acumulación de basura, afectando el ambiente y la salud de los vecinos.</p>
             </div>
             <div class="bg-green-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
-                <img src="https://via.placeholder.com/350x350?text=Denuncia+3" alt="denuncia 3" class="w-full h-56 object-cover rounded-lg">
+                <img th:src="@{Img/denuncia3.jpeg}" alt="denuncia 3" class="w-full h-56 object-cover rounded-lg">
                 <h3 class="text-2xl font-semibold text-green-600 mt-4">Falta de Seguridad</h3>
                 <p class="text-gray-600 mt-4">Los comerciantes han reportado varios incidentes de robo y vandalismo en la zona, pidiendo mayor presencia policial.</p>
             </div>

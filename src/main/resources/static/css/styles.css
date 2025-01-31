@@ -1,0 +1,71 @@
+.contenedor_principal {
+    padding-top: 4rem; /* 16px * 4 */
+    padding-bottom: 4rem; /* 16px * 4 */
+    background-color: #f9fafb; /* Color de fondo gris claro */
+    padding-left: 1rem; /* 16px */
+    padding-right: 1rem; /* 16px */
+}
+
+
+.contenedor_reseñas {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* Título de la sección */
+.section-title {
+    font-size: 1.875rem; /* 3xl */
+    font-weight: 600; /* Semi-negrita */
+    color: #1e40af; /* Azul */
+    margin-bottom: 2rem; /* 8 */
+}
+
+/* Diseño de la cuadrícula para las reseñas */
+.cajas {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr; /* 1 columna */
+    gap: 2rem; /* Espacio entre las tarjetas */
+}
+
+@media (min-width: 640px) {
+    .cajas {
+        grid-template-columns: 1fr 1fr; /* 2 columnas en pantallas medianas */
+    }
+}
+
+@media (min-width: 1024px) {
+    .cajas {
+        grid-template-columns: 1fr 1fr 1fr; /* 3 columnas en pantallas grandes */
+    }
+}
+
+/* Estilo de cada tarjeta de reseña */
+.reseñas{
+    background-color: white;
+    padding: 1.5rem; /* 6 */
+    border-radius: 1rem; /* Bordes redondeados */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: box-shadow 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover para las tarjetas */
+.review-card:hover {
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); /* Sombra más intensa en hover */
+}
+
+/* Estilo para el texto de la reseña */
+.review-text {
+    font-size: 1.125rem; /* 1.125rem = 18px */
+    color: #4b5563; /* Gris oscuro */
+    font-style: italic;
+}
+
+.review-author {
+    margin-top: 1rem; /* Espacio superior */
+    font-weight: 600; /* Negrita */
+    color: #1e40af; /* Azul */
+    font-size: 1.125rem; /* 1.125rem */
+}
