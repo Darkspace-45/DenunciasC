@@ -12,7 +12,7 @@
 <!-- Barra de Navegación -->
 <nav class="bg-blue-400 border-gray-200">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <a th:href="@{/Inicio}" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img th:src="@{Img/logo.accion-ciudadana.jpeg}" class="h-20" alt="Acción Ciudadana Logo">
             <span class="self-center text-2xl font-semibold text-black whitespace-nowrap">Acción Ciudadana</span>
         </a>
@@ -45,7 +45,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 px-3 text-black rounded-sm hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Nosotros</a>
+                    <a th:href="@{/Nosotros}" class="block py-2 px-3 text-black rounded-sm hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Nosotros</a>
                 </li>
             </ul>
         </div>
