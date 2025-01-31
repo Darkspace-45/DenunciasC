@@ -1,81 +1,108 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Denuncia Ciudadana</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-<h2>Formulario de Ingreso de Denuncia</h2>
-
-
-<form class="max-w-md mx-auto">
-    <div class="relative z-0 w-full mb-5 group">
-        <input type="email" name="floating_email" id="floating_email"
-               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-               placeholder=" " required/>
-        <label for="floating_email"
-               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
-            address</label>
-    </div>
-    <div class="relative z-0 w-full mb-5 group">
-        <input type="password" name="floating_password" id="floating_password"
-               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-               placeholder=" " required/>
-        <label for="floating_password"
-               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
-    </div>
-    <div class="relative z-0 w-full mb-5 group">
-        <input type="password" name="repeat_password" id="floating_repeat_password"
-               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-               placeholder=" " required/>
-        <label for="floating_repeat_password"
-               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
-            password</label>
-    </div>
-    <div class="grid md:grid-cols-2 md:gap-6">
-        <div class="relative z-0 w-full mb-5 group">
-            <input type="text" name="floating_first_name" id="floating_first_name"
-                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                   placeholder=" " required/>
-            <label for="floating_first_name"
-                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
-                name</label>
+<body class="bg-gray-100 p-6">
+<div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold mb-4">Formulario de Denuncia Ciudadana</h2>
+    <form onsubmit="return validateForm()">
+        <div class="mb-4">
+            <label for="titulo" class="block text-sm font-medium text-gray-700">Título de la Denuncia</label>
+            <input type="text" id="titulo" name="titulo" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Ej. Bache en la calle principal">
         </div>
-        <div class="relative z-0 w-full mb-5 group">
-            <input type="text" name="floating_last_name" id="floating_last_name"
-                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                   placeholder=" " required/>
-            <label for="floating_last_name"
-                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
-                name</label>
-        </div>
-    </div>
-    <div class="grid md:grid-cols-2 md:gap-6">
-        <div class="relative z-0 w-full mb-5 group">
-            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone"
-                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                   placeholder=" " required/>
-            <label for="floating_phone"
-                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
-                number (123-456-7890)</label>
-        </div>
-        <div class="relative z-0 w-full mb-5 group">
-            <input type="text" name="floating_company" id="floating_company"
-                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                   placeholder=" " required/>
-            <label for="floating_company"
-                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company
-                (Ex. Google)</label>
-        </div>
-    </div>
-    <button type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-        Submit
-    </button>
-</form>
 
+        <div class="mb-4">
+            <label for="descripcion" class="block text-sm font-medium text-gray-700">Descripción</label>
+            <textarea id="descripcion" name="descripcion" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" rows="4" placeholder="Describe el problema..."></textarea>
+        </div>
 
-<script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
+        <div class="mb-4">
+            <label for="locacion" class="block text-sm font-medium text-gray-700">Ubicación</label>
+            <input type="text" id="locacion" name="locacion" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Ej. Avenida Principal, Ciudad">
+        </div>
+
+        <div class="mb-4">
+            <label for="categoria" class="block text-sm font-medium text-gray-700">Categoría</label>
+            <select id="categoria" name="categoria" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+                <option value="">Selecciona una categoría</option>
+                <option value="bache">Bache</option>
+                <option value="alumbrado">Alumbrado Público</option>
+                <option value="seguridad">Problemas de Seguridad</option>
+                <option value="basura">Basura Acumulada</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="file" class="block text -sm font-medium text-gray-700">Adjuntar Foto (opcional)</label>
+            <input type="file" id="file" name="file" accept=".jpg,.png" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+        </div>
+
+        <div class="mb-4">
+            <label class="flex items-center">
+                <input type="checkbox" id="consent" name="consent" required class="mr-2">
+                Acepto los términos y condiciones
+            </label>
+        </div>
+
+        <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600">Enviar Denuncia</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        const title = document.getElementById("title").value;
+        const description = document.getElementById("description").value;
+        const location = document.getElementById("location").value;
+        const category = document.getElementById("category").value;
+        const fileInput = document.getElementById("file");
+        const consent = document.getElementById("consent").checked;
+
+        // Validación de título
+        if (title.length < 5 || title.length > 100) {
+            alert("El título debe tener entre 5 y 100 caracteres.");
+            return false;
+        }
+
+        // Validación de descripción
+        if (description.length < 20 || description.length > 1000) {
+            alert("La descripción debe tener entre 20 y 1000 caracteres.");
+            return false;
+        }
+
+        // Validación de ubicación
+        if (location.trim() === "") {
+            alert("La ubicación es obligatoria.");
+            return false;
+        }
+
+        // Validación de categoría
+        if (category === "") {
+            alert("Debes seleccionar una categoría.");
+            return false;
+        }
+
+        // Validación de archivo adjunto
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const validTypes = ["image/jpeg", "image/png"];
+            if (!validTypes.includes(file.type) || file.size > 5 * 1024 * 1024) {
+                alert("El archivo debe ser una imagen (JPG o PNG) y no debe exceder 5 MB.");
+                return false;
+            }
+        }
+
+        // Validación de consentimiento
+        if (!consent) {
+            alert("Debes aceptar los términos y condiciones.");
+            return false;
+        }
+
+        return true; // Si todas las validaciones pasan
+    }
+</script>
 </body>
 </html>
