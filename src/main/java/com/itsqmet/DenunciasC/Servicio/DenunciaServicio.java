@@ -1,10 +1,15 @@
 package com.itsqmet.DenunciasC.Servicio;
 
+import com.itextpdf.text.Font;
 import com.itsqmet.DenunciasC.Entidad.Denuncia;
 import com.itsqmet.DenunciasC.Repositorio.DenunciaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import javax.swing.text.Document;
 import java.awt.*;
 import java.io.ByteArrayOutputStream;
@@ -47,19 +52,28 @@ public class DenunciaServicio {
         return denunciaRepositorio.findById(id);
     }
 
-    //Metodo para generar el pdf
-    public static byte [] generarPdf() throws DocumentException, IOException {
-    List<Denuncia> autores = DenunciaRepositorio.findAll();
-    Document document = new Document();
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    PdfWriter.getInstance(document, baos);
-        document.open();        document.add(new Paragraph("Lista de autores", FontFactory.getFont("Arial", 14, Font.BOLD)));
-    PdfPTable table = new PdfPTable(5);        table.setWidthPercentage(100);
-        table.addCell(new PdfPCell(new Phrase("Codigo", FontFactory.getFont("Arial", 12))));        table.addCell(new PdfPCell(new Phrase("Nombre", FontFactory.getFont("Arial", 12))));
-        table.addCell(new PdfPCell(new Phrase("Nacionalidad", FontFactory.getFont("Arial", 12))));        table.addCell(new PdfPCell(new Phrase("Genero", FontFactory.getFont("Arial", 12))));
-        table.addCell(new PdfPCell(new Phrase("Fecha Nacimiento", FontFactory.getFont("Arial", 12))));        for (Autor autor: autores){
-        table.addCell(new PdfPCell(new Phrase(String.valueOf(autor.getId()), FontFactory.getFont("Arial", 11))));            table.addCell(new PdfPCell(new Phrase(String.valueOf(autor.getNombre()), FontFactory.getFont("Arial", 11))));
-        table.addCell(new PdfPCell(new Phrase(String.valueOf(autor.getNacionalidad()), FontFactory.getFont("Arial", 11))));            table.addCell(new PdfPCell(new Phrase(String.valueOf(autor.getGenero()), FontFactory.getFont("Arial", 11))));
-        table.addCell(new PdfPCell(new Phrase(String.valueOf(autor.getFechaNacimiento()), FontFactory.getFont("Arial", 11))));
-    }        document.add(table);
-        document.close();       
+    public byte[] generarpdf() throws DocumentException, IOException{
+        List<Denuncia> autores = denunciaRepositorio.findAll();
+        Document document = new Document();
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        PdfWriter.getInstance(document, baos);
+        document.open();
+        document.add(new Paragraph("Lista de Autores", FontFactory.getFont("Arial", 14, Font.BOLD)));
+        PdfPTable table = new PdfPTable(5);
+        table.setWidthPercentage(100);
+        table.addCell(new PdfPCell(new Phrase("Codigo", FontFactory.getFont("Arial", 12))));
+        table.addCell(new PdfPCell(new Phrase("Nombre", FontFactory.getFont("Arial", 12))));
+        table.addCell(new PdfPCell(new Phrase("Nacionalidad", FontFactory.getFont("Arial", 12))));
+        table.addCell(new PdfPCell(new Phrase("Genero", FontFactory.getFont("Arial", 12))));
+        table.addCell(new PdfPCell(new Phrase("Fecha Nacimiento", FontFactory.getFont("Arial", 12))));
+        for(Denuncia denuncia: autores){
+            table.addCell(new PdfPCell(new Phrase(String.valueOf(autor.getId()), FontFactory.getFont("Arial"))));
+            table.addCell(new PdfPCell(new Phrase(String.valueOf(autor.getNombre()), FontFactory.getFont("Arial"))));
+            table.addCell(new PdfPCell(new Phrase(String.valueOf(autor.getNacionalidad()), FontFactory.getFont("Arial"))));
+            table.addCell(new PdfPCell(new Phrase(String.valueOf(autor.getFechaNacimiento()), FontFactory.getFont("Arial"))));
+        }
+        document.add(table);
+        document.close();
+        return baos.toByteArray();
+    }
+}

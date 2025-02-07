@@ -52,12 +52,14 @@ public class DenunciaControlador {
         return "/Vistas/reseñas";
     }
 
-    @GetMapping("/denuncias/pdf")
-    public ResponseEntity<byte[]> descargarPdf() throws Exception{
-        byte[] pdf = DenunciaServicio.generarPdf();
+    @GetMapping("/autores/pdf")
+    public ResponseEntity<byte[]> decargarpdf() throws Exception{
+        byte[] pdf = DenunciaServicio.generarpdf();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_PDF);
         headers.setContentDispositionFormData("attachment", "autores.pdf");
         return new ResponseEntity<>(pdf, headers, HttpStatus.OK);
     }
+    }
+
 }
