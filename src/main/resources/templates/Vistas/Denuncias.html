@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de denuncias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.7.2/dist/flowbite.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="bg-blue-900 p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="#" class="text-white text-2xl font-bold">Acción Ciudadana</a>
+        <div class="space-x-4">
+            <a th:href="@{/Inicio}" class="text-white">Inicio</a>
+            <a th:href="@{/Nosotros}" class="text-white">Nosotros</a>
+            <a th:href="@{/Denuncias}" class="text-white">Tipos Denuncia</a>
+            <a th:href="@{/Reseñas}" class="text-white">Reseñas</a>
+        </div>
+    </div>
+</nav>
+
+
+<main class="container mx-auto py-10">
+
+    <h2 class="text-3xl font-bold text-center mb-8">Tipos de Denuncias</h2>
+
+    <!-- Contenedor de Tipos de Denuncias -->
+    <div id="denuncias" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Denuncia de Mal Estado de Infraestructura -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-road text-blue-600 text-3xl mr-4"></i>
+                <h3 class="text-xl font-semibold">Mal Estado de Infraestructura</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Denuncia cualquier problema relacionado con el estado de las calles, caminos, puentes o cualquier infraestructura pública deteriorada que represente un riesgo para la ciudadanía.
+            </p>
+            <a th:href="@{/formularioDenuncia}" class="text-blue-600 hover:text-blue-800">Realizar Denuncia</a>
+        </div>
+
+        <!-- Denuncia de Contaminación Ambiental -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-leaf text-green-600 text-3xl mr-4"></i>
+                <h3 class="text-xl font-semibold">Contaminación Ambiental</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Si tú eres testigo de la contaminación del: aire, agua, suelo, o cualquier otra forma de daño al medio ambiente, puedes realizar una denuncia aquí.
+            </p>
+            <a th:href="@{/formularioDenuncia}" class="text-blue-600 hover:text-blue-800">Realizar Denuncia</a>
+        </div>
+
+        <!-- Denuncia de Malos Tratos o Abuso de Autoridad -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-user-shield text-yellow-600 text-3xl mr-4"></i>
+                <h3 class="text-xl font-semibold">Abuso de Autoridad</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Si tú has sido víctima de abuso de autoridad, violencia policial o maltrato por parte de funcionarios públicos, tienes el derecho y puedes denunciarlo aquí.
+            </p>
+            <a th:href="@{/formularioDenuncia}" class="text-blue-600 hover:text-blue-800">Realizar Denuncia</a>
+        </div>
+
+        <!-- Denuncia de Abandono Animal -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-paw text-orange-600 text-3xl mr-4"></i>
+                <h3 class="text-xl font-semibold">Abandono Animal</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Si eres testigo de maltrato o abandono de animales en tu comunidad, puedes presentar una denuncia para proteger a los animales.
+            </p>
+            <a th:href="@{/formularioDenuncia}" class="text-blue-600 hover:text-blue-800">Realizar Denuncia</a>
+        </div>
+
+        <!-- Denuncia de Corrupción -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-gavel text-red-600 text-3xl mr-4"></i>
+                <h3 class="text-xl font-semibold">Corrupción</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Denuncia cualquier caso de corrupción que afecte a los recursos públicos o a la justicia en tu comunidad.
+            </p>
+            <a th:href="@{/formularioDenuncia}" class="text-blue-600 hover:text-blue-800">Realizar Denuncia</a>
+        </div>
+
+        <!-- Denuncia de Inseguridad y Crimen Organizado -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-user-lock text-red-700 text-3xl mr-4"></i>
+                <h3 class="text-xl font-semibold">Inseguridad y Crimen</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Si tienes conocimiento de actividades ilegales o inseguridad en tu comunidad, puedes denunciarlo de forma confidencial.
+            </p>
+            <a th:href="@{/formularioDenuncia}" class="text-blue-600 hover:text-blue-800">Realizar Denuncia</a>
+        </div>
+
+        <!-- Denuncia de Violación de Derechos Humanos -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-balance-scale text-purple-600 text-3xl mr-4"></i>
+                <h3 class="text-xl font-semibold">Violación de Derechos Humanos</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Si eres testigo o víctima de una violación de los derechos humanos, puedes presentar tu denuncia para que se tomen las acciones correspondientes.
+            </p>
+            <a th:href="@{/formularioDenuncia}" class="text-blue-600 hover:text-blue-800">Realizar Denuncia</a>
+        </div>
+
+        <!-- Denuncia de Abuso Laboral -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-briefcase text-indigo-600 text-3xl mr-4"></i>
+                <h3 class="text-xl font-semibold">Abuso Laboral</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Si has sufrido acoso o abuso laboral en tu lugar de trabajo, puedes denunciarlo aquí para que se tomen las medidas necesarias.
+            </p>
+            <a th:href="@{/formularioDenuncia}" class="text-blue-600 hover:text-blue-800">Realizar Denuncia</a>
+        </div>
+
+        <!-- Denuncia de Desastres Naturales -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-fire text-red-500 text-3xl mr-4"></i>
+                <h3 class="text-xl font-semibold">Desastres Naturales</h3>
+            </div>
+            <p class="text-gray-700 mb-4">
+                Si eres testigo de un desastre natural que afecta a tu comunidad, como inundaciones, terremotos o incendios, realiza tu denuncia aquí.
+            </p>
+            <a th:href="@{/formularioDenuncia}" class="text-blue-600 hover:text-blue-800">Realizar Denuncia</a>
+        </div>
+
+    </div>
+
+</main>
+
+<!-- Sección de Contacto -->
+<section id="contacto" class="bg-gray-200 py-10">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Contacto</h2>
+        <p class="text-gray-600 mb-4">Si tienes alguna pregunta o necesitas más información, no dudes en ponerte en contacto con nosotros.</p>
+        <a href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser&ec=asw-gmail-globalnav-signin&ddm=1" class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700">Enviar un Correo</a>
+    </div>
+</section>
+<footer class="bg-blue-900 text-white text-center py-4">
+    <p>&copy; 2025 Acción Ciudadana. Todos los derechos reservados.</p>
+</footer>
+
+
+</body>
+</html>
