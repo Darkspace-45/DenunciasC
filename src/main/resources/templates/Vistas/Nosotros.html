@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Denuncias Ciudadanas</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" th:href="@{/css/Justificado.css}">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@1.7.2/dist/flowbite.css" rel="stylesheet">
 </head>
 <body class="bg-blue-50">
@@ -17,7 +18,7 @@
             <a th:href="@{/Inicio}" class="text-white">Inicio</a>
             <a th:href="@{/Nosotros}" class="text-white">Nosotros</a>
             <a th:href="@{/Denuncias}" class="text-white">Tipos Denuncia</a>
-            <a href="/templates/Vistas/reseñas.html" class="text-white">Reseñas</a>
+            <a th:href="@{/Reseñas}" class="text-white">Reseñas</a>
         </div>
     </div>
 </nav>
@@ -65,10 +66,10 @@
             <div class="bg-green-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
                 <h3 class="text-xl font-semibold text-green-800">📊 Transparencia</h3>
                 <p class="text-gray-700 mt-2">Ayuda a exponer irregularidades y promover la justicia.</ </div>
-            <div class="bg-yellow-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                <h3 class="text-xl font-semibold text-yellow-800">🏗️ Infraestructura</h3>
-                <p class="text-gray-700 mt-2">Permite mejorar servicios públicos y espacios comunitarios.</p>
-            </div>
+        </div>
+        <div class="bg-yellow-100 p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+            <h3 class="text-xl font-semibold text-yellow-800">🏗️ Infraestructura</h3>
+            <p class="text-gray-700 mt-2">Permite mejorar servicios públicos y espacios comunitarios.</p>
         </div>
     </section>
 
