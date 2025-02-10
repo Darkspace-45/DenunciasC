@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>Inicio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.7.2/dist/flowbite.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet"/>
 </head>
 <body>
 <!-- Navbar -->
@@ -13,7 +12,7 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center">
         <a href="#" class="text-white text-2xl font-bold">Acción Ciudadana</a>
         <div class="space-x-4">
-            <a th:href="@{/Inicio}" class="text-white">Inicio</a>
+            <a th:href="@{/}" class="text-white">Inicio</a>
             <a th:href="@{/Nosotros}" class="text-white">Nosotros</a>
             <a th:href="@{/Denuncias}" class="text-white">Tipos Denuncia</a>
             <a th:href="@{/Reseñas}" class="text-white">Reseñas</a>
@@ -21,60 +20,66 @@
     </div>
 </nav>
 
-
-
-
-<div id="indicators-carousel" class="relative w-full" data-carousel="static">
+<div id="default-carousel" class="relative w-full h-full" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-        <!-- Item 1 (activo) -->
-        <div class="duration-700 ease-in-out" data-carousel-item="active">
-            <img th:src="@{/Img/fondo2.png}" class="absolute block w-full h-full object-cover" alt="...">
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96 flex items-center justify-center">
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img th:src="@{/Img/fondo2.png}" class="object-center object-cover max-h-full max-w-full mx-auto" alt="...">
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img th:src="@{/Img/denuncia2.jfif}" class="absolute block w-full h-full object-cover" alt="...">
+            <img th:src="@{/Img/denunciass1.jpg}" class="object-center object-cover max-h-full mx-auto" alt="...">
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img th:src="@{/Img/denuncia3.webp}" class="absolute block w-full h-full object-cover" alt="...">
+            <img th:src="@{/Img/denunciass3.jpg}" class="object-center object-cover max-h-full max-w-full mx-auto" alt="...">
         </div>
     </div>
-
     <!-- Slider indicators -->
-    <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+                data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+                data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+                data-carousel-slide-to="2"></button>
     </div>
-
     <!-- Slider controls -->
-    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+    <button type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev>
         <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M5 1 1 5l4 4"/>
             </svg>
             <span class="sr-only">Previous</span>
         </span>
     </button>
-    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+    <button type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next>
         <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m1 9 4-4-4-4"/>
             </svg>
             <span class="sr-only">Next</span>
         </span>
     </button>
 </div>
-
-
-
 <!-- Titulo -->
 <section id="bienvenida" class="py-16 bg-blue-50">
     <div class="container mx-auto text-center px-4">
         <h2 class="text-4xl font-semibold text-blue-900 mb-4">¡Bienvenido a Acción Ciudadana!</h2>
-        <p class="text-lg text-gray-700 mb-8">Acción Ciudadana es una plataforma dedicada a promover la participación activa de los ciudadanos en la denuncia de injusticias y problemas sociales. Juntos, podemos trabajar para hacer de nuestra comunidad un lugar más transparente y justo.</p>
-        <a href="#denuncias" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-700">Comienza a Denunciar</a>
+        <p class="text-lg text-gray-700 mb-8">Acción Ciudadana es una plataforma dedicada a promover la participación
+            activa de los ciudadanos en la denuncia de injusticias y problemas sociales. Juntos, podemos trabajar para
+            hacer de nuestra comunidad un lugar más transparente y justo.</p>
+        <a href="#denuncias" class="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-700">Comienza a
+            Denunciar</a>
     </div>
 </section>
 
@@ -87,24 +92,30 @@
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <img th:src="@{/Img/denuncia1.jpg}" alt="Denuncia 1" class="w-full h-48 object-cover mb-4 rounded-lg">
                 <h3 class="text-xl font-semibold text-blue-900 mb-2">Denuncia sobre corrupción en la alcaldía</h3>
-                <p class="text-gray-700 mb-4">Descripción breve de la denuncia sobre un caso de corrupción en la alcaldía. Asegúrese de presentar todos los detalles relevantes para que sea tomada en cuenta por las autoridades.</p>
-                <button class="bg-blue-900 text-white px-4 py-2 rounded-lg">Leer más</button>
+                <p class="text-gray-700 mb-4">Descripción breve de la denuncia sobre un caso de corrupción en la
+                    alcaldía. Asegúrese de presentar todos los detalles relevantes para que sea tomada en cuenta por las
+                    autoridades.</p>
+
             </div>
 
             <!-- Denuncia 2 -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <img th:src="@{/Img/denuncia2.jfif}" alt="Denuncia 2" class="w-full h-48 object-cover mb-4 rounded-lg">
-                <h3 class="text-xl font-semibold text-blue-900 mb-2">Irregularidades en la construcción de un puente</h3>
-                <p class="text-gray-700 mb-4">Una denuncia sobre la construcción de un puente que no cumple con los estándares de seguridad. El denunciante presenta pruebas documentales y fotográficas.</p>
-                <button class="bg-blue-900 text-white px-4 py-2 rounded-lg">Leer más</button>
+                <h3 class="text-xl font-semibold text-blue-900 mb-2">Irregularidades en la construcción de un
+                    puente</h3>
+                <p class="text-gray-700 mb-4">Una denuncia sobre la construcción de un puente que no cumple con los
+                    estándares de seguridad. El denunciante presenta pruebas documentales y fotográficas.</p>
+
             </div>
 
             <!-- Denuncia 3 -->
             <div class="bg-white p-6 rounded-lg shadow-lg">
                 <img th:src="@{/Img/denuncia3.webp}" alt="Denuncia 3" class="w-full h-48 object-cover mb-4 rounded-lg">
                 <h3 class="text-xl font-semibold text-blue-900 mb-2">Maltrato animal en un refugio</h3>
-                <p class="text-gray-700 mb-4">Una denuncia sobre maltrato animal en un refugio local. Se incluyen testimonios y pruebas visuales de los hechos denunciados. Estan a la espera de que se solucione lo mas pronto posible.</p>
-                <button class="bg-blue-900 text-white px-4 py-2 rounded-lg">Leer más</button>
+                <p class="text-gray-700 mb-4">Una denuncia sobre maltrato animal en un refugio local. Se incluyen
+                    testimonios y pruebas visuales de los hechos denunciados. Estan a la espera de que se solucione lo
+                    mas pronto posible.</p>
+
             </div>
         </div>
     </div>
@@ -122,13 +133,17 @@
             <!-- Misión -->
             <div class="w-1/2 bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-300">
                 <h3 class="text-2xl font-semibold text-blue-900 mb-4">Misión</h3>
-                <p class="text-lg text-gray-700">Nuestra misión es promover la transparencia y justicia social a través de las denuncias públicas. Estamos comprometidos con la lucha contra la corrupción y fomentamos la participación ciudadana para lograr un cambio positivo en nuestra sociedad.</p>
+                <p class="text-lg text-gray-700">Nuestra misión es promover la transparencia y justicia social a través
+                    de las denuncias públicas. Estamos comprometidos con la lucha contra la corrupción y fomentamos la
+                    participación ciudadana para lograr un cambio positivo en nuestra sociedad.</p>
             </div>
 
             <!-- Visión -->
             <div class="w-1/2 bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-300">
                 <h3 class="text-2xl font-semibold text-blue-900 mb-4">Visión</h3>
-                <p class="text-lg text-gray-700">Ser un referente en la lucha contra la corrupción y promover una sociedad más justa y equitativa. Trabajamos para que cada voz sea escuchada y que las denuncias puedan transformar positivamente las comunidades.</p>
+                <p class="text-lg text-gray-700">Ser un referente en la lucha contra la corrupción y promover una
+                    sociedad más justa y equitativa. Trabajamos para que cada voz sea escuchada y que las denuncias
+                    puedan transformar positivamente las comunidades.</p>
             </div>
         </div>
     </div>
@@ -138,48 +153,55 @@
 <section id="servicios" class="py-16 bg-white">
     <div class="container mx-auto text-center px-4">
         <h2 class="text-4xl font-semibold text-blue-900 mb-4">Servicios</h2>
-        <p class="text-lg text-gray-700 mb-12">Ofrecemos diversos servicios para apoyar la denuncia pública y promover un cambio en nuestra comunidad.</p>
+        <p class="text-lg text-gray-700 mb-12">Ofrecemos diversos servicios para apoyar la denuncia pública y promover
+            un cambio en nuestra comunidad.</p>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             <!-- Servicio 1 -->
             <div class="bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-300">
                 <i class="fas fa-bullhorn text-4xl text-blue-900 mb-4"></i>
                 <h3 class="text-2xl font-semibold text-blue-900 mb-4">Denuncia Anónima</h3>
-                <p class="text-gray-700">Permite a los ciudadanos presentar denuncias sin revelar su identidad, garantizando su privacidad y seguridad.</p>
+                <p class="text-gray-700">Permite a los ciudadanos presentar denuncias sin revelar su identidad,
+                    garantizando su privacidad y seguridad.</p>
             </div>
 
             <!-- Servicio 2 -->
             <div class="bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-300">
                 <i class="fas fa-users text-4xl text-blue-900 mb-4"></i>
                 <h3 class="text-2xl font-semibold text-blue-900 mb-4">Participación Comunitaria</h3>
-                <p class="text-gray-700">Brindamos una plataforma para que la comunidad participe activamente en la resolución de problemas locales.</p>
+                <p class="text-gray-700">Brindamos una plataforma para que la comunidad participe activamente en la
+                    resolución de problemas locales.</p>
             </div>
 
             <!-- Servicio 3 -->
             <div class="bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-300">
                 <i class="fas fa-gavel text-4xl text-blue-900 mb-4"></i>
                 <h3 class="text-2xl font-semibold text-blue-900 mb-4">Asesoría Legal</h3>
-                <p class="text-gray-700">Ofrecemos orientación legal a quienes deseen llevar su denuncia a instancias legales para garantizar que se haga justicia.</p>
+                <p class="text-gray-700">Ofrecemos orientación legal a quienes deseen llevar su denuncia a instancias
+                    legales para garantizar que se haga justicia.</p>
             </div>
 
             <!-- Servicio 4 -->
             <div class="bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-300">
                 <i class="fas fa-search text-4xl text-blue-900 mb-4"></i>
                 <h3 class="text-2xl font-semibold text-blue-900 mb-4">Investigación y Seguimiento</h3>
-                <p class="text-gray-700">Realizamos un seguimiento exhaustivo de cada denuncia para asegurar que las autoridades actúen conforme a la ley.</p>
+                <p class="text-gray-700">Realizamos un seguimiento exhaustivo de cada denuncia para asegurar que las
+                    autoridades actúen conforme a la ley.</p>
             </div>
 
             <!-- Servicio 5 -->
             <div class="bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-300">
                 <i class="fas fa-clipboard-list text-4xl text-blue-900 mb-4"></i>
                 <h3 class="text-2xl font-semibold text-blue-900 mb-4">Reportes y Estadísticas</h3>
-                <p class="text-gray-700">Generamos informes detallados y estadísticas de las denuncias para visibilizar los problemas más comunes en la sociedad.</p>
+                <p class="text-gray-700">Generamos informes detallados y estadísticas de las denuncias para visibilizar
+                    los problemas más comunes en la sociedad.</p>
             </div>
 
             <!-- Servicio 6 -->
             <div class="bg-blue-50 p-8 rounded-lg shadow-lg border border-blue-300">
                 <i class="fas fa-comments text-4xl text-blue-900 mb-4"></i>
                 <h3 class="text-2xl font-semibold text-blue-900 mb-4">Red de Apoyo</h3>
-                <p class="text-gray-700">Creamos una red de apoyo para aquellos que enfrentan problemas debido a sus denuncias, brindando orientación y asistencia.</p>
+                <p class="text-gray-700">Creamos una red de apoyo para aquellos que enfrentan problemas debido a sus
+                    denuncias, brindando orientación y asistencia.</p>
             </div>
         </div>
     </div>
@@ -189,5 +211,7 @@
 <footer class="bg-blue-900 text-white text-center py-4">
     <p>&copy; 2025 Acción Ciudadana. Todos los derechos reservados.</p>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 </body>
 </html>

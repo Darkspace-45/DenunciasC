@@ -1,19 +1,11 @@
 package com.itsqmet.DenunciasC.Servicio;
 
-import com.itextpdf.text.Font;
 import com.itsqmet.DenunciasC.Entidad.Denuncia;
 import com.itsqmet.DenunciasC.Repositorio.DenunciaRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.itextpdf.text.*;
-import com.itextpdf.text.pdf.PdfPCell;
-import com.itextpdf.text.pdf.PdfPTable;
-import com.itextpdf.text.pdf.PdfWriter;
-import javax.swing.text.Document;
-import java.awt.*;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+
 import java.util.List;
 import java.util.Optional;
 

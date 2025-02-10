@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Denuncias</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@1.7.2/dist/flowbite.css" rel="stylesheet">
+</head>
+<body class="bg-blue-50">
+
+<nav class="bg-blue-900 p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="#" class="text-white text-2xl font-bold">Acción Ciudadana</a>
+        <div class="space-x-4">
+            <a th:href="@{/}" class="text-white">Inicio</a>
+            <a th:href="@{/Nosotros}" class="text-white">Nosotros</a>
+            <a th:href="@{/Denuncias}" class="text-white">Tipos Denuncia</a>
+            <a th:href="@{/Reseñas}" class="text-white">Reseñas</a>
+        </div>
+    </div>
+</nav>
+
+<div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-md mt-10">
+    <h2 class="text-2xl font-bold mb-4">Lista de Denuncias</h2>
+    <table class="min-w-full bg-white">
+        <thead>
+        <tr>
+            <th class="py-2 px-4 border-b">Título</th>
+            <th class="py-2 px-4 border-b">Descripción</th>
+            <th class="py-2 px-4 border-b">Ubicación</th>
+            <th class="py-2 px-4 border-b">Categoría</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="denuncia : ${denuncias}">
+            <td class="py-2 px-4 border-b" th:text="${denuncia.titulo}">Título de la denuncia</td>
+            <td class="py-2 px-4 border-b" th:text="${denuncia.descripcion}">Descripción de la denuncia</td>
+            <td class="py-2 px-4 border-b" th:text="${denuncia.ubicacion}">Ubicación de la denuncia</td>
+            <td class="py-2 px-4 border-b" th:text="${denuncia.categoria}">Categoría de la denuncia</td>
+        </tr>
+        </tbody>
+    </table>
+    <div th:if="${#lists.isEmpty(denuncias)}" class="mt-4">
+        <p>No hay denuncias disponibles.</p>
+    </div>
+</div>
+
+</body>
+</html>
