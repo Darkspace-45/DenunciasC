@@ -44,6 +44,12 @@ public class DenunciaControlador {
         }
     }
 
+    @GetMapping("/eliminarDenuncia/{id}")
+    public String eliminarDenuncia(@PathVariable String id){
+        denunciaServicio.eliminarDenuncia(id);
+        return "redirect:/denuncias";
+    }
+
     @GetMapping("/formularioDenuncia")
     public String mostrarFormulario(Model model) {
         model.addAttribute("denuncia", new Denuncia());
