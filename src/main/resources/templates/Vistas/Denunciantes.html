@@ -26,14 +26,16 @@
     <table class="min-w-full bg-white">
         <thead>
         <tr>
+            <th class="py-2 px-4 border-b">ID</th>
             <th class="py-2 px-4 border-b">Nombre</th>
             <th class="py-2 px-4 border-b">Correo Electrónico</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="denunciante : ${denunciantes}">
-            <td class="py-2 px-4 border-b" th:text="${denunciante.nombre}">Nombre del denunciante</td>
-            <td class="py-2 px-4 border-b" th:text="${denunciante.email}">Correo del denunciante</td>
+            <td class="py-2 px-4 " th:text="${denunciante.id}">ID</td>
+            <td class="py-2 px-4 " th:text="${denunciante.nombre}">Nombre del denunciante</td>
+            <td class="py-2 px-4 " th:text="${denunciante.correo}">Correo del denunciante</td>
             <td>
                 <a th:href="@{/eliminarDenunciante/} + ${denunciante.id}">Eliminar</a>
             </td>
