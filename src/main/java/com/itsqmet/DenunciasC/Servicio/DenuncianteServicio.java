@@ -34,7 +34,7 @@ public class DenuncianteServicio {
     }
 
     //Método para eliminar Denunciante según el ID
-    public void elimimarDenunciante(String id){
+    public void eliminarDenunciante(String id){
         denuncianteRepositorio.deleteById(id);
     }
 

@@ -56,8 +56,8 @@ public class DenuncianteControlador {
     }
 
     @GetMapping("/eliminarDenunciante/{id}")
-    public String eliminarDenuncia(@PathVariable String id){
-        denuncianteServicio.elimimarDenunciante(id);
-        return "redirect:/denuncias";
+    public String eliminarDenunciante(@PathVariable String id){
+        denuncianteServicio.eliminarDenunciante(id);
+        return "redirect:/denunciantes";
     }
 }

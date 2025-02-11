@@ -58,8 +58,8 @@ public class AutoridadControlador {
     }
 
     @GetMapping("/eliminarAutoridad/{id}")
-    public String eliminarDenuncia(@PathVariable String id){
+    public String eliminarAutoridad(@PathVariable String id){
         autoridadServicio.eliminarAutoridad(id);
-        return "redirect:/denuncias";
+        return "redirect:/autoridades";
     }
 }
