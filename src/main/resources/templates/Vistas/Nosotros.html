@@ -92,22 +92,21 @@
         </div>
     </section>
 
-    <!-- Sección: Contacto -->
     <section class="mt-12 text-center">
         <h2 class="text-4xl font-bold text-gray-800">Contáctanos</h2>
         <p class="text-gray-700 mt-4 text-lg">Si tienes dudas o necesitas ayuda, envíanos un mensaje.</p>
-        <form class="mt-6 max-w-lg mx-auto bg-white p-6 rounded-lg shadow-xl">
+        <form class="mt-6 max-w-lg mx-auto bg-white p-6 rounded-lg shadow-xl" th:action="@{/contacto}" method="post">
             <div class="mb-4">
                 <label class="block text-gray-700">Nombre</label>
-                <input type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400" placeholder="Tu nombre">
+                <input type="text" name="nombre" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400" placeholder="Tu nombre">
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700">Correo Electrónico</label>
-                <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400" placeholder="Tu correo">
+                <input type="email" name="correo" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400" placeholder="Tu correo">
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700">Mensaje</label>
-                <textarea class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400" placeholder="Tu mensaje"></textarea>
+                <textarea name="mensaje" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400" placeholder="Tu mensaje"></textarea>
             </div>
             <button type="submit" class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-lg hover:shadow-md">Enviar</button>
         </form>

@@ -1,6 +1,8 @@
 package com.itsqmet.DenunciasC.Controlador;
 
+import com.itsqmet.DenunciasC.Entidad.Contacto;
 import com.itsqmet.DenunciasC.Entidad.Denuncia;
+import com.itsqmet.DenunciasC.Servicio.ContactoServicio;
 import com.itsqmet.DenunciasC.Servicio.DenunciaServicio;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,9 @@ public class DenunciaControlador {
 
     @Autowired
     private DenunciaServicio denunciaServicio;
+
+    @Autowired
+    private ContactoServicio contactoServicio;
 
     @GetMapping("/")
     public String paginaInicio() {
@@ -77,6 +82,24 @@ public class DenunciaControlador {
         return "/Vistas/reseñas";
     }
 
+
+    @GetMapping("/contacto")
+    public String mostrarFormularioContacto(Model model) {
+        model.addAttribute("contacto", new Contacto());
+        return "contacto"; // Asegúrate de que este nombre coincida con el archivo HTML
+    }
+
+    @PostMapping("/contacto")
+    public String enviarFormularioContacto(@ModelAttribute Contacto contacto) {
+        contactoServicio.guardarContacto(contacto);
+        return "redirect:/contacto?exito"; // Redirige a la página de contacto con un mensaje de éxito
+    }
+
+    @GetMapping("/ver-contactos")
+    public String verContactos(Model model) {
+        model.addAttribute("contactos", contactoServicio.obtenerContactos());
+        return "ver-contactos"; // Página para mostrar los contactos almacenados
+    }
 }
 
 
