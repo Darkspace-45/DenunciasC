@@ -10,17 +10,57 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-<nav class="bg-blue-900 p-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#" class="text-white text-2xl font-bold">Acción Ciudadana</a>
-        <div class="space-x-4">
-            <a th:href="@{/}" class="text-white">Inicio</a>
-            <a th:href="@{/Nosotros}" class="text-white">Nosotros</a>
-            <a th:href="@{/Denuncias}" class="text-white">Tipos de Denuncia</a>
-            <a th:href="@{/Reseñas}" class="text-white">Reseñas</a>
+
+<section>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 relative z-10">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a th:href="@{/}" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img th:src="@{/Img/logo.png}" class="h-8" alt="Logo" style="filter: invert(1)"/>
+            </a>
+            <div class="flex md:order-2 space-x-2 md:space-x-1 rtl:space-x-reverse">
+                <button type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Registrarse
+                </button>
+                <button type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Iniciar Sesión
+                </button>
+                <button data-collapse-toggle="navbar-cta" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-cta" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a th:href="@{/}"
+                           class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Inicio</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/Nosotros}"
+                           class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Nosotros</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/Denuncias}"
+                           class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Tipos
+                            de Denuncias</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/Reseñas}"
+                           class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Reseñas</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</section>
 
 <br>
 <br>
@@ -31,9 +71,9 @@
 </div>
 
 <!-- Contenedor de Reseñas -->
-<div class="space-y-6">
+<div class="flex flex-col items-center space-y-6 justify-center">
     <!-- Reseña 1 -->
-    <div class="bg-white p-6 rounded-lg shadow-md">
+    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
         <div class="flex items-center mb-4">
             <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
             <div>
@@ -42,11 +82,12 @@
             </div>
         </div>
         <p class="text-gray-700 mb-4">
-            La plataforma de denuncias funciona muy bien. He podido reportar varios problemas de infraestructura en mi ciudad y han tomado acción rápidamente.
+            La plataforma de denuncias funciona muy bien. He podido reportar varios problemas de infraestructura en mi
+            ciudad y han tomado acción rápidamente.
         </p>
     </div>
     <!-- Reseña 2 -->
-    <div class="bg-white p-6 rounded-lg shadow-md">
+    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
         <div class="flex items-center mb-4">
             <img src="https://www.w3schools.com/w3images/avatar3.png" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
             <div>
@@ -55,11 +96,12 @@
             </div>
         </div>
         <p class="text-gray-700 mb-4">
-            Es excelente poder expresar nuestras preocupaciones. Aunque algunas denuncias toman tiempo, al menos se están escuchando. A seguir denunciando.
+            Es excelente poder expresar nuestras preocupaciones. Aunque algunas denuncias toman tiempo, al menos se
+            están escuchando. A seguir denunciando.
         </p>
     </div>
     <!-- Reseña 3 -->
-    <div class="bg-white p-6 rounded-lg shadow-md">
+    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
         <div class="flex items-center mb-4">
             <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
             <div>
@@ -68,11 +110,12 @@
             </div>
         </div>
         <p class="text-gray-700 mb-4">
-            Aunque la página es útil, me gustaría que tuvieran más opciones de seguimiento para las denuncias. A veces no sé qué pasa después de hacer la denuncia.
+            Aunque la página es útil, me gustaría que tuvieran más opciones de seguimiento para las denuncias. A veces
+            no sé qué pasa después de hacer la denuncia.
         </p>
     </div>
     <!-- Reseña 4 -->
-    <div class="bg-white p-6 rounded-lg shadow-md">
+    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
         <div class="flex items-center mb-4">
             <img src="https://www.w3schools.com/w3images/avatar3.png" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
             <div>
@@ -81,12 +124,12 @@
             </div>
         </div>
         <p class="text-gray-700 mb-4">
-            Estoy muy satisfecha con la rapidez de las respuestas y el apoyo que recibí. Mi denuncia sobre el mal estado de una calle fue tomada en cuenta rápidamente.
+            Estoy muy satisfecha con la rapidez de las respuestas y el apoyo que recibí. Mi denuncia sobre el mal estado
+            de una calle fue tomada en cuenta rápidamente.
         </p>
     </div>
-
     <!-- Reseña 5 -->
-    <div class="bg-white p-6 rounded-lg shadow-md">
+    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
         <div class="flex items-center mb-4">
             <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
             <div>
@@ -95,11 +138,12 @@
             </div>
         </div>
         <p class="text-gray-700 mb-4">
-            Esta plataforma necesita mejorar su accesibilidad para personas con discapacidad. No es fácil navegar para todos los usuarios.
+            Esta plataforma necesita mejorar su accesibilidad para personas con discapacidad. No es fácil navegar para
+            todos los usuarios.
         </p>
     </div>
     <!-- Reseña 6 -->
-    <div class="bg-white p-6 rounded-lg shadow-md">
+    <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
         <div class="flex items-center mb-4">
             <img src="https://www.w3schools.com/w3images/avatar3.png" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
             <div>
@@ -107,47 +151,9 @@
                 <p class="text-sm text-gray-500">Hace 1 mes</p>
             </div>
         </div>
-        <p class="text-gray-700 mb-4">
-            Me ha sido muy útil para informar sobre los problemas de basura en mi vecindario. A veces la respuesta tarda, pero al menos están trabajando en ello.
-        </p>
-    </div>
-    <!-- Reseña 1 -->
-    <div class="bg-white p-6 rounded-lg shadow-md">
-        <div class="flex items-center mb-4">
-            <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
-            <div>
-                <h2 class="font-semibold text-gray-800">Carlos López</h2>
-                <p class="text-sm text-gray-500">Hace 3 días</p>
-            </div>
-        </div>
-        <p class="text-gray-700 mb-4">
-            La plataforma de denuncias funciona muy bien. He podido reportar varios problemas de infraestructura en mi ciudad y han tomado acción rápidamente.
-        </p>
-    </div>
-    <!-- Reseña 6 -->
-    <div class="bg-white p-6 rounded-lg shadow-md">
-        <div class="flex items-center mb-4">
-            <img src="https://www.w3schools.com/w3images/avatar3.png" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
-            <div>
-                <h2 class="font-semibold text-gray-800">Luis Pérez</h2>
-                <p class="text-sm text-gray-500">Hace 1 mes</p>
-            </div>
-        </div>
-        <p class="text-gray-700 mb-4">
-            Me ha sido muy útil para informar sobre los problemas de basura en mi vecindario. A veces la respuesta tarda, pero al menos están trabajando en ello.
-        </p>
-    </div>
-    <!-- Reseña 1 -->
-    <div class="bg-white p-6 rounded-lg shadow-md">
-        <div class="flex items-center mb-4">
-            <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" class="w-12 h-12 rounded-full mr-4">
-            <div>
-                <h2 class="font-semibold text-gray-800">Carlos López</h2>
-                <p class="text-sm text-gray-500">Hace 3 días</p>
-            </div>
-        </div>
-        <p class="text-gray-700 mb-4">
-            La plataforma de denuncias funciona muy bien. He podido reportar varios problemas de infraestructura en mi ciudad y han tomado acción rápidamente.
+        <p class="text-gray -700 mb-4">
+            Me ha sido muy útil para informar sobre los problemas de basura en mi vecindario. A veces la respuesta
+            tarda, pero al menos están trabajando en ello.
         </p>
     </div>
 </div>
@@ -168,10 +174,13 @@
             </div>
             <div class="mb-4">
                 <label for="review" class="block text-gray-700">Reseña</label>
-                <textarea id="review" class="w-full p-2 border rounded-md" rows="4" placeholder="Escribe tu reseña..." required></textarea>
+                <textarea id="review" class="w-full p-2 border rounded-md" rows="4" placeholder="Escribe tu reseña..."
+                          required></textarea>
             </div>
             <div class="flex justify-end space-x-4">
-                <button type="button" class="text-gray-500 hover:text-gray-700" onclick="toggleModal('add-review-modal')">Cerrar</button>
+                <button type="button" class="text-gray-500 hover:text-gray-700"
+                        onclick="toggleModal('add-review-modal')">Cerrar
+                </button>
                 <button type="submit" class="bg-blue-500 text-white p-2 rounded-md">Enviar Reseña</button>
             </div>
         </form>
@@ -179,8 +188,26 @@
 </div>
 <br>
 <br>
-<footer class="bg-blue-900 text-white text-center py-4">
-    <p>&copy; 2025 Acción Ciudadana. Todos los derechos reservados.</p>
+<footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-800">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a th:href="@{/}"
+                                                                                      class="hover:underline">CivicWatch™</a>. Todos los derechos reservados.
+    </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">About</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+            </li>
+            <li>
+                <a href="#" class="hover:underline">Contact</a>
+            </li>
+        </ul>
+    </div>
 </footer>
 <!-- Script para mostrar y ocultar el modal -->
 <script>

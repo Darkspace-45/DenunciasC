@@ -62,4 +62,5 @@ public class AutoridadControlador {
         autoridadServicio.eliminarAutoridad(id);
         return "redirect:/autoridades";
     }
+
 }
