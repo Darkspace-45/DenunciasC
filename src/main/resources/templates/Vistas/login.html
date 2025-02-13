@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="bg-white p-8 rounded-lg shadow-md w-96">
+    <h2 class="text-2xl font-bold text-center mb-6">Iniciar Sesión</h2>
+    <form id="login-form">
+        <div class="mb-4">
+            <label for="email" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required
+                   class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                   placeholder="tuemail@ejemplo.com">
+        </div>
+        <div class="mb-4">
+            <label for="password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+            <input type="password" id="password" name="password" required
+                   class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                   placeholder="********">
+        </div>
+        <button type="submit"
+                class="w-full bg-blue-600 text-white p-2 rounded-md hover:bg-blue-700 transition duration-200">Iniciar
+            Sesión
+        </button>
+    </form>
+    <p class="mt-4 text-center text-sm text-gray-600">
+        ¿No tienes una cuenta? <a href="#" class="text-blue-600 hover:underline">Regístrate aquí</a>
+    </p>
+</div>
+
+<script>
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita el envío del formulario
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Aquí puedes agregar la lógica para enviar los datos al servidor
+        console.log('Email:', email);
+        console.log('Contraseña:', password);
+        // Por ejemplo, puedes hacer una llamada a una API para autenticar al usuario
+    });
+</script>
+
+</body>
+</html>

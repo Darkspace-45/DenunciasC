@@ -9,39 +9,156 @@
 </head>
 <body class="bg-blue-50">
 
-<nav class="bg-blue-900 p-4">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#" class="text-white text-2xl font-bold">Acción Ciudadana</a>
-        <div class="space-x-4">
-            <a th:href="@{/}" class="text-white">Inicio</a>
-            <a th:href="@{/Nosotros}" class="text-white">Nosotros</a>
-            <a th:href="@{/Denuncias}" class="text-white">Tipos Denuncia</a>
-            <a th:href="@{/Reseñas}" class="text-white">Reseñas</a>
+<section>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900 relative z-10">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img th:src="@{Img/logo.png}" class="h-8" alt="Logo" style="filter: invert(1)"/>
+            </a>
+            <div class="flex md:order-2 space-x-2 md:space-x-1 rtl:space-x-reverse">
+                <button id="openRegisterModal" type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Registrarse
+                </button>
+                <button id="openLoginModal" type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Iniciar Sesión
+                </button>
+                <button data-collapse-toggle="navbar-cta" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-cta" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    <li>
+                        <a th:href="@{/}" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Inicio</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/Nosotros}" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Nosotros</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/Denuncias}" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md :dark:hover:bg-transparent dark:border-gray-700">Tipos de Denuncias</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/Reseñas}" class="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Reseñas</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
+</section>
+
+<!-- Modal de Inicio de Sesión -->
+<div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
+    <div class="bg-white rounded-lg p-6 w-96 shadow-lg transform transition-all duration-300 ease-in-out scale-95 opacity-0" id="loginModalContent">
+        <h2 class="text-lg font-bold mb-4 text-gray-800">Iniciar Sesión</h2>
+        <form>
+            <div class="mb-4">
+                <label for="loginEmail" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                <input type="email" id="loginEmail" class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="loginPassword" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                <input type="password" id="loginPassword" class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-200">Iniciar Sesión</button>
+        </form>
+        <button id="closeLoginModal" class="mt-4 text-red-500 hover:underline">Cerrar</button>
     </div>
-</nav>
+</div>
+
+<!-- Modal de Registro -->
+<div id="registerModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 transition-opacity duration-300 ease-in-out">
+    <div class="bg-white rounded-lg p-6 w-96 shadow-lg transform transition-all duration-300 ease-in-out scale-95 opacity-0" id="registerModalContent">
+        <h2 class="text-lg font-bold mb-4 text-gray-800">Registrarse</h2>
+        <form>
+            <div class="mb-4">
+                <label for="registerName" class="block text-sm font-medium text-gray-700">Nombre</label>
+                <input type="text" id="registerName" class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="registerEmail" class="block text-sm font-medium text-gray-700">Correo Electrónico</label>
+                <input type="email" id="registerEmail" class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <div class="mb-4">
+                <label for="registerPassword" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                <input type="password" id="registerPassword" class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" required>
+            </div>
+            <button type="submit" class="w-full bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-200">Registrarse</button>
+        </form>
+        <button id="closeRegisterModal" class="mt-4 text-red-500 hover:underline">Cerrar</button>
+    </div>
+</div>
+
+<script>
+    document.getElementById('openLoginModal').onclick = function() {
+        document.getElementById('loginModal').classList.remove('hidden');
+        const modalContent = document.getElementById('loginModalContent');
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+    };
+    document.getElementById('closeLoginModal').onclick = function() {
+        const modalContent = document.getElementById('loginModalContent');
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            document.getElementById('loginModal').classList.add('hidden');
+        }, 300); // Espera a que la animación termine
+    };
+    document.getElementById('openRegisterModal').onclick = function() {
+        document.getElementById('registerModal').classList.remove('hidden');
+        const modalContent = document.getElementById('registerModalContent');
+        modalContent.classList.remove('scale-95', 'opacity-0');
+        modalContent.classList.add('scale-100', 'opacity-100');
+    };
+    document.getElementById('closeRegisterModal').onclick = function() {
+        const modalContent = document.getElementById('registerModalContent');
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            document.getElementById('registerModal').classList.add('hidden');
+        }, 300); // Espera a que la animación termine
+    };
+</script>
 
 <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md mt-10">
     <h2 class="text-2xl font-bold mb-4">Formulario de Denuncia Ciudadana</h2>
-    <form  th:action="@{/registrar}" method="post" th:object="${denuncia}">
-        <div class="mb-4">
-            <label for="titulo" class="block text-sm font-medium text-gray-700">Título de la Denuncia</label>
-            <input type="text" id="titulo" th:field="*{titulo}" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Ej. Bache en la calle principal">
+    <form th:action="@{/registrar}" method="post" th:object="${denuncia}">
+        <div class="mb-5">
+            <label for="titulo" class="block mb-2 text-sm font-medium text-gray-900">Título de la
+                Denuncia</label>
+            <input type="text" id="titulo" th:field="*{titulo}" required
+                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   placeholder="Ej. Bache en la calle principal">
         </div>
 
-        <div class="mb-4">
-            <label for="descripcion" class="block text-sm font-medium text-gray-700">Descripción</label>
-            <textarea id="descripcion" th:field="*{descripcion}" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" rows="4" placeholder="Describe el problema..."></textarea>
+        <div class="mb-5">
+            <label for="descripcion"
+                   class="block mb-2 text-sm font-medium text-gray-900 ">Descripción</label>
+            <textarea id="descripcion" th:field="*{descripcion}" required
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      rows="4" placeholder="Describe el problema..."></textarea>
         </div>
 
-        <div class="mb-4">
-            <label for="locacion" class="block text-sm font-medium text-gray-700">Ubicación</label>
-            <input type="text" id="locacion" th:field="*{ubicacion}" required class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Ej. Avenida Principal, Ciudad">
+        <div class="mb-5">
+            <label for="locacion" class="block mb-2 text-sm font-medium text-gray-900">Ubicación</label>
+            <input type="text" id="locacion" th:field="*{ubicacion}" required
+                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                   placeholder="Ej. Avenida Principal, Ciudad">
         </div>
 
-        <div class="mb-4">
-            <label for="categoria" class="block text-sm font-medium text-gray-700">Categoría</label>
-            <select id="categoria" th:field="*{categoria}" required class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+        <div class="mb-5">
+            <label for="categoria"
+                   class="block mb-2 text-sm font-medium text-gray-900">Categoría</label>
+            <select id="categoria" th:field="*{categoria}" required
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                 <option value="">Selecciona una categoría</option>
                 <option value="Mal Estado de Infraestructura">Mal Estado de Infraestructura</option>
                 <option value="Contaminación Ambiental">Contaminación Ambiental</option>
@@ -55,19 +172,26 @@
             </select>
         </div>
 
-        <div class="mb-4">
-            <label for="file" class="block text-sm font-medium text-gray-700">Adjuntar Foto (opcional)</label>
-            <input type="file" id="file" th:field="*{file}" accept=".jpg,.png" class="mt-1 block w-full border border-gray-300 rounded-md p-2">
+        <div class="mb-5">
+            <label for="file" class="block mb-2 text-sm font-medium text-gray-900">Adjuntar Foto
+                (opcional)</label>
+            <input type="file" id="file" th:field="*{file}" accept=".jpg,.png"
+                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
         </div>
 
-        <div class="mb-4">
-            <label class="flex items-center">
-                <input type="checkbox" id="consent" name="consent" required class="mr-2">
-                Acepto los términos y condiciones
-            </label>
+        <div class="flex items-start mb-5">
+            <div class="flex items-center h-5">
+                <input id="consent" type="checkbox" name="consent" required
+                       class="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300"/>
+            </div>
+            <label for="consent" class="ms-2 text-sm font-medium text-gray-900">Acepto los términos y
+                condiciones</label>
         </div>
 
-        <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 rounded-md hover:bg-blue-600">Enviar Denuncia</button>
+        <button type="submit"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+            Enviar Denuncia
+        </button>
     </form>
 </div>
 
