@@ -1,24 +1,17 @@
 package com.itsqmet.DenunciasC.Entidad;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Denunciante {
+import java.util.Collection;
+import java.util.Collections;
+
+public class Denunciante implements UserDetails {
     private String id;
+    private String username;
+    private String password;
+    private String rol;
     private String nombre;
-    private String correo;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNombre() {
         return nombre;
@@ -28,11 +21,65 @@ public class Denunciante {
         this.nombre = nombre;
     }
 
-    public String getCorreo() {
-        return correo;
+    // Implementación de los métodos de UserDetails
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        // Retorna el rol como autoridad
+        return Collections.emptyList(); // Puedes ajustarlo para incluir roles específicos
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    // Getters y Setters adicionales
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }

@@ -7,4 +7,9 @@ import java.util.List;
 
 public interface AutoridadRepositorio extends MongoRepository<Autoridad, String> {
     List<Autoridad> findByNombreContainingIgnoreCase(String nombre);
+
+    List<Autoridad> findByUsername(String username);
+
+    boolean existsByUsername(String username);
+
 }
