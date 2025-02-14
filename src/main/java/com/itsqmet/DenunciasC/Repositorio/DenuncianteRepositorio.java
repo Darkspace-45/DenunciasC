@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface DenuncianteRepositorio extends MongoRepository<Denunciante, String> {
     List<Denunciante> findByNombreContainingIgnoreCase(String nombre);
-    List<Denunciante> findByUsername(String username);
 
-
-    boolean existsByUsername(String username);
+    Denunciante findByUsername(String username);
 }
